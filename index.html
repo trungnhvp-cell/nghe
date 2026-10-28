@@ -1,0 +1,1965 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IELTS Listening Studio — Luyện nghe 5.5 → 6.5+</title>
+<style>
+:root{
+  --cyan:#0891B2;
+  --cyan-dark:#0E7490;
+  --cyan-deep:#164E63;
+  --cyan-soft:#ECFEFF;
+  --cyan-light:#CFFAFE;
+  --amber:#F59E0B;
+  --amber-soft:#FEF3C7;
+  --green:#16A34A;
+  --green-soft:#E7F7EE;
+  --red:#DC2626;
+  --red-soft:#FEE2E2;
+  --blue:#2563EB;
+  --blue-soft:#EAF1FE;
+  --navy:#0B1B33;
+  --navy-2:#122845;
+  --bg:#F5F7FA;
+  --card:#FFFFFF;
+  --text:#12213A;
+  --muted:#64748B;
+  --border:#E2E8F0;
+  --shadow:0 8px 30px rgba(11,27,51,.08);
+  --shadow-lg:0 20px 60px rgba(11,27,51,.16);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Segoe UI',system-ui,-apple-system,'Helvetica Neue',Roboto,Arial,sans-serif;
+  background:var(--bg);color:var(--text);line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+input,textarea{font-family:inherit}
+
+/* ============ NAV ============ */
+.nav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(255,255,255,.93);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--border);
+}
+.nav-inner{
+  max-width:1240px;margin:0 auto;padding:0 24px;
+  height:70px;display:flex;align-items:center;justify-content:space-between;gap:24px;
+}
+.logo{display:flex;align-items:center;gap:12px;font-weight:800;font-size:1.12rem;letter-spacing:-.3px;text-decoration:none;color:var(--navy)}
+.logo-mark{
+  width:40px;height:40px;border-radius:12px;
+  background:linear-gradient(135deg,var(--cyan),var(--cyan-deep));
+  color:#fff;display:grid;place-items:center;
+  font-weight:900;font-size:1rem;box-shadow:0 6px 18px rgba(8,145,178,.4);
+}
+.logo span small{display:block;font-size:.63rem;font-weight:600;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase}
+.nav-links{display:flex;gap:4px;list-style:none}
+.nav-links a{
+  text-decoration:none;color:var(--muted);font-weight:600;font-size:.9rem;
+  padding:9px 14px;border-radius:10px;transition:.2s;display:block;
+}
+.nav-links a:hover{color:var(--cyan);background:var(--cyan-soft)}
+.nav-cta{
+  background:linear-gradient(135deg,var(--cyan),var(--cyan-dark));color:#fff;font-weight:700;font-size:.9rem;
+  padding:11px 22px;border-radius:11px;transition:.25s;
+  box-shadow:0 8px 20px rgba(8,145,178,.35);
+}
+.nav-cta:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(8,145,178,.45)}
+.burger{display:none;font-size:1.6rem;color:var(--navy)}
+
+/* ============ HERO ============ */
+.hero{
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(900px 480px at 88% -10%, rgba(8,145,178,.18), transparent 60%),
+    radial-gradient(800px 500px at -5% 110%, rgba(245,158,11,.13), transparent 60%),
+    linear-gradient(180deg,#FFFFFF 0%, #F7F9FC 100%);
+  padding:76px 24px 86px;
+}
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background-image:radial-gradient(rgba(11,27,51,.06) 1px, transparent 1px);
+  background-size:26px 26px;
+  mask-image:linear-gradient(180deg,#000 0%, transparent 75%);
+  pointer-events:none;
+}
+.hero-inner{
+  max-width:1240px;margin:0 auto;position:relative;
+  display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center;
+}
+.badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:#fff;border:1px solid var(--border);
+  padding:8px 16px;border-radius:100px;font-size:.8rem;font-weight:700;
+  color:var(--navy);box-shadow:var(--shadow);margin-bottom:22px;
+}
+.badge .dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px rgba(22,163,74,.15);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.hero h1{
+  font-size:3.05rem;line-height:1.1;font-weight:900;letter-spacing:-2px;
+  color:var(--navy);margin-bottom:20px;
+}
+.hero h1 .accent{
+  background:linear-gradient(120deg,var(--cyan),#22D3EE);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero p.lead{font-size:1.05rem;color:var(--muted);max-width:540px;margin-bottom:30px}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:15px 28px;border-radius:13px;font-weight:700;font-size:.95rem;
+  transition:.25s;text-decoration:none;
+}
+.btn-primary{
+  background:linear-gradient(135deg,var(--cyan),var(--cyan-dark));color:#fff;
+  box-shadow:0 14px 34px rgba(8,145,178,.35);
+}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 18px 40px rgba(8,145,178,.45)}
+.btn-ghost{
+  background:#fff;color:var(--navy);border:1.5px solid var(--border);
+  box-shadow:var(--shadow);
+}
+.btn-ghost:hover{border-color:var(--cyan);color:var(--cyan)}
+
+/* Hero preview card */
+.hero-card{
+  background:#fff;border-radius:24px;padding:28px;
+  box-shadow:var(--shadow-lg);border:1px solid var(--border);
+  position:relative;
+}
+.hero-card h4{font-size:.75rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--muted);margin-bottom:18px;font-weight:800}
+.listen-preview{
+  display:flex;align-items:center;gap:16px;margin-bottom:20px;
+  padding:16px;background:linear-gradient(135deg,var(--cyan-soft),#F0FDFF);border-radius:14px;
+}
+.listen-wave{display:flex;gap:3px;align-items:center;height:32px}
+.listen-wave i{width:4px;background:var(--cyan);border-radius:2px;height:10px}
+.listen-wave.playing i{animation:wave 1s infinite ease-in-out}
+.listen-wave i:nth-child(2){animation-delay:.1s;height:16px}
+.listen-wave i:nth-child(3){animation-delay:.2s;height:22px}
+.listen-wave i:nth-child(4){animation-delay:.3s;height:16px}
+.listen-wave i:nth-child(5){animation-delay:.4s;height:10px}
+.listen-wave i:nth-child(6){animation-delay:.5s;height:20px}
+.listen-wave i:nth-child(7){animation-delay:.6s;height:26px}
+.listen-wave i:nth-child(8){animation-delay:.7s;height:14px}
+.listen-wave i:nth-child(9){animation-delay:.8s;height:8px}
+@keyframes wave{0%,100%{opacity:.5;transform:scaleY(.6)}50%{opacity:1;transform:scaleY(1.2)}}
+.listen-preview p{font-size:.85rem;font-weight:700;color:var(--cyan-deep)}
+
+.skill-bars{display:flex;flex-direction:column;gap:14px}
+.skill-bar-item .top{display:flex;justify-content:space-between;font-size:.82rem;font-weight:700;margin-bottom:6px;color:var(--navy)}
+.skill-bar-item .top span:last-child{color:var(--cyan)}
+.track{height:8px;background:#EEF1F6;border-radius:100px;overflow:hidden}
+.fill{height:100%;border-radius:100px;background:linear-gradient(90deg,var(--cyan),#22D3EE);width:0;transition:width 1.4s cubic-bezier(.2,.8,.2,1)}
+
+/* ============ STATS ============ */
+.stats{
+  max-width:1240px;margin:-40px auto 0;padding:0 24px;position:relative;z-index:5;
+}
+.stats-grid{
+  background:#fff;border-radius:20px;box-shadow:var(--shadow-lg);
+  display:grid;grid-template-columns:repeat(4,1fr);
+  border:1px solid var(--border);overflow:hidden;
+}
+.stat{padding:26px 24px;text-align:center;border-right:1px solid var(--border)}
+.stat:last-child{border-right:none}
+.stat b{display:block;font-size:1.9rem;font-weight:900;color:var(--navy);letter-spacing:-1px}
+.stat b em{color:var(--cyan);font-style:normal}
+.stat span{font-size:.82rem;color:var(--muted);font-weight:600}
+
+/* ============ SECTION ============ */
+.section{max-width:1240px;margin:0 auto;padding:84px 24px}
+.section-head{text-align:center;max-width:700px;margin:0 auto 50px}
+.eyebrow{
+  display:inline-block;font-size:.72rem;font-weight:800;letter-spacing:2px;
+  text-transform:uppercase;color:var(--cyan);margin-bottom:14px;
+}
+.section-head h2{font-size:2.25rem;font-weight:900;letter-spacing:-1.2px;color:var(--navy);margin-bottom:14px}
+.section-head p{color:var(--muted);font-size:1rem}
+
+/* ============ ROADMAP ============ */
+.roadmap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.phase{
+  background:#fff;border-radius:20px;padding:28px 24px;
+  border:1px solid var(--border);box-shadow:var(--shadow);
+  position:relative;transition:.3s;overflow:hidden;
+}
+.phase::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:4px;
+  background:linear-gradient(90deg,var(--cyan),#22D3EE);
+  transform:scaleX(0);transform-origin:left;transition:.4s;
+}
+.phase:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-color:#A5F3FC}
+.phase:hover::before{transform:scaleX(1)}
+.phase-num{
+  width:44px;height:44px;border-radius:13px;display:grid;place-items:center;
+  background:var(--cyan-soft);color:var(--cyan);font-weight:900;font-size:1.1rem;
+  margin-bottom:18px;
+}
+.phase h3{font-size:1.05rem;font-weight:800;color:var(--navy);margin-bottom:6px}
+.phase .weeks{font-size:.76rem;font-weight:700;color:var(--cyan);letter-spacing:.5px;margin-bottom:14px;display:block}
+.phase ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+.phase li{font-size:.84rem;color:var(--muted);display:flex;gap:9px;align-items:flex-start;line-height:1.5}
+.phase li::before{content:'✓';color:var(--green);font-weight:900;flex-shrink:0;font-size:.85rem}
+
+/* ============ LISTENING LAB ============ */
+.lab-wrap{
+  background:linear-gradient(180deg,var(--navy) 0%, var(--navy-2) 100%);
+  border-radius:30px;padding:8px;box-shadow:var(--shadow-lg);
+}
+.lab-inner{background:#fff;border-radius:24px;overflow:hidden}
+.lab-tabs{
+  display:flex;gap:4px;padding:14px;border-bottom:1px solid var(--border);
+  overflow-x:auto;background:#FBFCFE;
+}
+.lab-tab{
+  padding:12px 20px;border-radius:12px;font-weight:800;font-size:.85rem;
+  color:var(--muted);white-space:nowrap;transition:.22s;
+  display:flex;align-items:center;gap:10px;
+}
+.lab-tab:hover{background:#F1F4F9;color:var(--navy)}
+.lab-tab.active{background:var(--cyan);color:#fff;box-shadow:0 8px 20px rgba(8,145,178,.3)}
+.lab-tab .badge-num{
+  display:inline-grid;place-items:center;width:24px;height:24px;
+  border-radius:7px;background:rgba(255,255,255,.2);font-size:.72rem;
+}
+.lab-tab.active .badge-num{background:rgba(255,255,255,.25)}
+
+.lab-body{padding:28px 32px}
+
+.lab-header{
+  display:flex;justify-content:space-between;align-items:flex-start;gap:20px;
+  flex-wrap:wrap;margin-bottom:22px;
+}
+.lab-header h3{font-size:1.3rem;font-weight:900;color:var(--navy);letter-spacing:-.5px;margin-bottom:5px}
+.lab-header p{font-size:.85rem;color:var(--muted)}
+
+/* Timer */
+.timer-box{
+  background:var(--bg);border:1px solid var(--border);border-radius:14px;
+  padding:12px 18px;min-width:220px;
+}
+.timer-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.timer-top span{font-size:.68rem;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted)}
+.timer-time{font-size:1.35rem;font-weight:900;font-variant-numeric:tabular-nums;color:var(--navy);letter-spacing:-.5px}
+.timer-time.warn{color:var(--red);animation:blink 1s infinite}
+@keyframes blink{50%{opacity:.4}}
+.timer-track{height:5px;background:#E6EAF1;border-radius:100px;overflow:hidden;margin-bottom:10px}
+.timer-fill{height:100%;background:linear-gradient(90deg,var(--green),#34D399);border-radius:100px;transition:width 1s linear}
+.timer-fill.warn{background:linear-gradient(90deg,var(--red),#F87171)}
+.timer-btns{display:flex;gap:6px}
+.tbtn{
+  flex:1;padding:7px;border-radius:8px;font-size:.72rem;font-weight:800;
+  background:#fff;border:1.5px solid var(--border);color:var(--navy);transition:.2s;
+}
+.tbtn:hover{border-color:var(--navy)}
+.tbtn.play{background:var(--cyan);color:#fff;border-color:var(--cyan)}
+.tbtn.play:hover{background:var(--cyan-dark)}
+.tbtn.play.running{background:var(--red);border-color:var(--red)}
+
+/* Audio Player */
+.audio-player{
+  display:flex;align-items:center;gap:18px;
+  background:linear-gradient(135deg,var(--cyan-deep),#0F3B47);
+  border-radius:18px;padding:22px 26px;margin-bottom:24px;color:#fff;
+  position:relative;overflow:hidden;
+}
+.audio-player::after{
+  content:'';position:absolute;width:200px;height:200px;border-radius:50%;
+  background:radial-gradient(circle,rgba(34,211,238,.4),transparent 70%);
+  right:-60px;top:-80px;pointer-events:none;
+}
+.play-circle{
+  width:56px;height:56px;border-radius:50%;flex-shrink:0;
+  background:var(--cyan);color:#fff;display:grid;place-items:center;font-size:1.2rem;
+  transition:.25s;box-shadow:0 8px 22px rgba(34,211,238,.5);
+  position:relative;z-index:1;
+}
+.play-circle:hover{transform:scale(1.07)}
+.play-circle.playing{background:var(--amber);color:var(--navy)}
+.play-circle:disabled{opacity:.5;cursor:not-allowed;transform:none}
+.audio-info{flex:1;position:relative;z-index:1}
+.audio-info b{font-size:.95rem;display:block;margin-bottom:3px}
+.audio-info span{font-size:.78rem;color:#94A3B8;display:block;line-height:1.5}
+.audio-wave{display:flex;gap:3px;align-items:center;height:28px;position:relative;z-index:1}
+.audio-wave i{width:3px;height:8px;background:var(--cyan-light);border-radius:2px;display:block;transition:height .2s}
+.audio-wave.playing i{animation:wave2 .9s infinite ease-in-out}
+.audio-wave.playing i:nth-child(2){animation-delay:.1s}
+.audio-wave.playing i:nth-child(3){animation-delay:.2s}
+.audio-wave.playing i:nth-child(4){animation-delay:.3s}
+.audio-wave.playing i:nth-child(5){animation-delay:.4s}
+.audio-wave.playing i:nth-child(6){animation-delay:.5s}
+.audio-wave.playing i:nth-child(7){animation-delay:.6s}
+@keyframes wave2{0%,100%{height:8px}50%{height:26px}}
+
+/* Questions */
+.q-list{display:flex;flex-direction:column;gap:14px}
+.q{
+  border:1px solid var(--border);border-radius:12px;padding:16px 20px;transition:.2s;background:#fff;
+}
+.q:hover{border-color:#CBD5E1}
+.q.correct{border-color:var(--green);background:var(--green-soft)}
+.q.wrong{border-color:var(--red);background:var(--red-soft)}
+.q-text{font-size:.9rem;font-weight:600;color:var(--navy);margin-bottom:12px;display:flex;gap:10px;align-items:flex-start}
+.q-text .num{
+  flex-shrink:0;width:24px;height:24px;border-radius:7px;background:var(--cyan);color:#fff;
+  display:grid;place-items:center;font-size:.72rem;font-weight:800;
+}
+.q-text .num.wrong-num{background:var(--red)}
+.fill-input{
+  width:100%;padding:11px 15px;border-radius:9px;border:1.5px solid var(--border);
+  font-size:.88rem;transition:.2s;background:#FBFCFE;color:var(--navy);font-weight:600;
+}
+.fill-input:focus{outline:none;border-color:var(--cyan);background:#fff;box-shadow:0 0 0 3px var(--cyan-soft)}
+
+.choices{display:flex;flex-direction:column;gap:8px}
+.choices label{
+  display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:9px;
+  border:1.5px solid var(--border);cursor:pointer;transition:.2s;font-size:.85rem;
+  color:#475569;background:#fff;
+}
+.choices label:hover{border-color:var(--cyan);background:var(--cyan-soft)}
+.choices input{display:none}
+.choices input:checked + label{background:var(--cyan);border-color:var(--cyan);color:#fff;font-weight:700}
+.choices label .key{
+  display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;
+  background:var(--bg);font-size:.7rem;font-weight:900;flex-shrink:0;
+}
+.choices input:checked + label .key{background:rgba(255,255,255,.25);color:#fff}
+
+.actions{display:flex;gap:12px;margin-top:24px;flex-wrap:wrap}
+.btn-check{
+  background:linear-gradient(135deg,var(--green),#128A3E);color:#fff;font-weight:800;
+  padding:14px 28px;border-radius:12px;font-size:.9rem;transition:.25s;
+  box-shadow:0 10px 26px rgba(22,163,74,.32);display:inline-flex;align-items:center;gap:8px;
+}
+.btn-check:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(22,163,74,.42)}
+.btn-outline{
+  background:#fff;color:var(--navy);border:1.5px solid var(--border);
+  padding:14px 22px;border-radius:12px;font-weight:700;font-size:.88rem;transition:.2s;
+}
+.btn-outline:hover{border-color:var(--navy)}
+.btn-ghost-sm{
+  background:transparent;color:var(--muted);border:1.5px dashed var(--border);
+  padding:14px 20px;border-radius:12px;font-weight:700;font-size:.85rem;transition:.2s;
+}
+.btn-ghost-sm:hover{border-color:var(--cyan);color:var(--cyan)}
+
+/* Transcript */
+.transcript{
+  margin-top:22px;padding:22px 26px;background:#FBFCFE;border:1px solid var(--border);
+  border-left:4px solid var(--cyan);border-radius:14px;display:none;
+}
+.transcript.show{display:block;animation:fade .35s ease}
+.transcript h5{font-size:.85rem;font-weight:900;color:var(--navy);text-transform:uppercase;letter-spacing:1px;margin-bottom:14px}
+.transcript p{font-size:.88rem;line-height:1.8;color:#33415C;margin-bottom:10px}
+.transcript p:last-child{margin-bottom:0}
+.transcript .speaker{font-weight:800;color:var(--cyan-deep);margin-right:8px}
+
+/* ============ AI FEEDBACK ============ */
+.feedback{margin-top:28px;display:none}
+.feedback.show{display:block;animation:fade .4s ease}
+@keyframes fade{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+.loading-box{
+  display:none;align-items:center;gap:16px;padding:24px 28px;
+  background:var(--cyan-soft);border-radius:16px;border:1px solid #A5F3FC;
+}
+.loading-box.show{display:flex}
+.spinner{
+  width:26px;height:26px;border-radius:50%;flex-shrink:0;
+  border:3px solid #BAE6FD;border-top-color:var(--cyan);
+  animation:spin .8s linear infinite;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+.loading-box p{font-size:.9rem;font-weight:700;color:var(--cyan-deep)}
+
+.fb-card{
+  border:1px solid var(--border);border-radius:20px;overflow:hidden;
+  box-shadow:var(--shadow);
+}
+.fb-hero{
+  display:flex;align-items:center;gap:28px;padding:30px;
+  background:linear-gradient(135deg,var(--cyan-soft),#F0FDFF);
+  border-bottom:1px solid #A5F3FC;flex-wrap:wrap;
+}
+.band-circle{
+  width:126px;height:126px;border-radius:50%;flex-shrink:0;
+  display:grid;place-items:center;position:relative;
+  background:conic-gradient(var(--c,var(--cyan)) calc(var(--p,70) * 1%), #E9EDF3 0);
+  transition:.6s;
+}
+.band-circle::after{content:'';position:absolute;inset:11px;background:#fff;border-radius:50%}
+.band-inner{position:relative;z-index:1;text-align:center}
+.band-inner b{display:block;font-size:2.2rem;font-weight:900;color:var(--navy);letter-spacing:-1.5px;line-height:1}
+.band-inner small{font-size:.58rem;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted)}
+.fb-hero-text h3{font-size:1.3rem;font-weight:900;color:var(--navy);letter-spacing:-.5px;margin-bottom:6px}
+.fb-hero-text p{font-size:.88rem;color:var(--muted);max-width:520px}
+
+.stats-grid-fb{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:0;
+  border-bottom:1px solid var(--border);background:#FBFCFE;
+}
+.stat-cell{padding:16px;text-align:center;border-right:1px solid var(--border)}
+.stat-cell:last-child{border-right:none}
+.stat-cell b{display:block;font-size:1.15rem;font-weight:900;color:var(--navy)}
+.stat-cell span{font-size:.68rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.6px}
+
+.fb-section{padding:24px 30px;border-bottom:1px solid var(--border)}
+.fb-section:last-child{border-bottom:none}
+.fb-section h4{
+  font-size:.92rem;font-weight:900;color:var(--navy);margin-bottom:14px;
+  display:flex;align-items:center;gap:10px;
+}
+.fb-section h4 .ico{
+  width:26px;height:26px;border-radius:8px;display:grid;place-items:center;font-size:.82rem;
+}
+.ico-good{background:var(--green-soft);color:var(--green)}
+.ico-warn{background:var(--amber-soft);color:#B45309}
+.ico-tip{background:var(--blue-soft);color:var(--blue)}
+.ico-info{background:var(--cyan-soft);color:var(--cyan)}
+
+.q-review{display:flex;flex-direction:column;gap:8px}
+.q-row{
+  display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:10px;
+  font-size:.85rem;background:#FBFCFE;border:1px solid #EEF1F6;
+}
+.q-row.correct{background:var(--green-soft);border-color:#B7E4C8}
+.q-row.wrong{background:var(--red-soft);border-color:#FECACA}
+.q-row .q-idx{
+  flex-shrink:0;width:24px;height:24px;border-radius:50%;
+  display:grid;place-items:center;font-size:.7rem;font-weight:900;
+  background:var(--cyan);color:#fff;
+}
+.q-row.correct .q-idx{background:var(--green)}
+.q-row.wrong .q-idx{background:var(--red)}
+.q-row .q-content{flex:1;color:#334155}
+.q-row .q-content strong{color:var(--navy)}
+.q-row .q-content em{font-style:normal;color:var(--muted);font-size:.8rem}
+
+.fb-list{display:flex;flex-direction:column;gap:10px}
+.fb-item{
+  display:flex;gap:12px;align-items:flex-start;font-size:.87rem;color:#475569;line-height:1.65;
+  padding:11px 15px;border-radius:10px;background:#FBFCFE;border:1px solid #EEF1F6;
+}
+.fb-item .bullet{flex-shrink:0;font-weight:900;font-size:.85rem;margin-top:1px}
+.b-good{color:var(--green)}
+.b-warn{color:#B45309}
+.b-tip{color:var(--blue)}
+.fb-item strong{color:var(--navy)}
+.fb-item code{
+  background:#F1F4F9;padding:2px 7px;border-radius:5px;font-size:.82rem;
+  font-family:ui-monospace,Menlo,Consolas,monospace;color:var(--cyan-deep);font-weight:700;
+}
+.fb-item a{color:var(--cyan);font-weight:700;text-decoration:none}
+.fb-item a:hover{text-decoration:underline}
+
+/* ============ TRANSCRIPTS SECTION ============ */
+.tx-grid{display:flex;flex-direction:column;gap:16px}
+.tx-card{
+  background:#fff;border-radius:18px;border:1px solid var(--border);
+  box-shadow:var(--shadow);overflow:hidden;transition:.3s;
+}
+.tx-card:hover{box-shadow:var(--shadow-lg)}
+.tx-head{
+  display:flex;align-items:center;gap:16px;padding:22px 26px;
+  cursor:pointer;transition:.2s;flex-wrap:wrap;
+}
+.tx-head:hover{background:#FBFCFE}
+.tx-badge{
+  padding:6px 14px;border-radius:100px;font-size:.72rem;font-weight:900;
+  letter-spacing:.5px;background:var(--cyan-soft);color:var(--cyan-deep);
+  flex-shrink:0;
+}
+.tx-head h4{font-size:1rem;font-weight:800;color:var(--navy);flex:1;min-width:200px}
+.tx-meta{font-size:.75rem;font-weight:700;color:var(--muted);display:flex;gap:14px}
+.tx-toggle{
+  width:32px;height:32px;border-radius:9px;background:var(--bg);
+  display:grid;place-items:center;color:var(--navy);font-weight:900;
+  transition:.3s;flex-shrink:0;font-size:.9rem;
+}
+.tx-card.open .tx-toggle{transform:rotate(180deg);background:var(--cyan-soft);color:var(--cyan)}
+.tx-body{display:none;padding:0 26px 26px}
+.tx-card.open .tx-body{display:block;animation:fade .3s ease}
+.tx-text{
+  background:#FBFCFE;border:1px solid var(--border);border-left:4px solid var(--cyan);
+  border-radius:12px;padding:20px 24px;font-size:.88rem;line-height:1.9;color:#33415C;
+  margin-bottom:16px;
+}
+.tx-text p{margin-bottom:10px}
+.tx-text p:last-child{margin-bottom:0}
+.tx-text .speaker{font-weight:800;color:var(--cyan-deep);margin-right:8px}
+.tx-answers{
+  background:var(--green-soft);border:1px solid #B7E4C8;border-radius:12px;
+  padding:16px 20px;
+}
+.tx-answers h5{font-size:.8rem;font-weight:900;color:#0F7A38;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px}
+.tx-answers ul{list-style:none;display:flex;flex-direction:column;gap:6px}
+.tx-answers li{font-size:.82rem;color:#334155;display:flex;gap:8px}
+.tx-answers li b{color:#0F7A38;flex-shrink:0}
+
+/* ============ STRATEGIES ============ */
+.strategy-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.strategy{
+  background:#fff;border:1px solid var(--border);border-radius:16px;padding:24px;
+  box-shadow:0 2px 10px rgba(11,27,51,.05);transition:.25s;
+}
+.strategy:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.strategy .s-icon{
+  width:46px;height:46px;border-radius:13px;display:grid;place-items:center;
+  font-size:1.2rem;margin-bottom:14px;background:var(--cyan-soft);
+}
+.strategy h4{font-size:1rem;font-weight:800;color:var(--navy);margin-bottom:8px}
+.strategy p{font-size:.83rem;color:var(--muted);line-height:1.65}
+
+/* ============ PROGRESS ============ */
+.progress-card{
+  background:#fff;border-radius:24px;padding:36px;border:1px solid var(--border);
+  box-shadow:var(--shadow);display:grid;grid-template-columns:1fr 1.4fr;gap:44px;align-items:center;
+}
+.band-visual{text-align:center}
+.band-visual .big{
+  font-size:4.6rem;font-weight:900;letter-spacing:-4px;line-height:1;
+  background:linear-gradient(135deg,var(--cyan),#22D3EE);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.band-visual .cap{font-size:.85rem;font-weight:700;color:var(--muted);margin-top:8px}
+.band-visual .pill{
+  display:inline-block;margin-top:16px;background:var(--green-soft);color:#0F7A38;
+  font-size:.78rem;font-weight:800;padding:7px 16px;border-radius:100px;
+}
+.p-list{display:flex;flex-direction:column;gap:18px}
+.p-item .top{display:flex;justify-content:space-between;font-size:.86rem;font-weight:700;margin-bottom:8px;color:var(--navy)}
+.p-item .top em{font-style:normal;color:var(--muted);font-weight:600;font-size:.8rem}
+.p-track{height:10px;background:#EEF1F6;border-radius:100px;overflow:hidden}
+.p-fill{height:100%;border-radius:100px;width:0;transition:width 1.2s cubic-bezier(.2,.8,.2,1)}
+
+/* ============ CTA ============ */
+.cta{max-width:1240px;margin:0 auto 84px;padding:0 24px}
+.cta-box{
+  background:linear-gradient(135deg,var(--navy),var(--navy-2));
+  border-radius:28px;padding:60px 48px;text-align:center;position:relative;overflow:hidden;
+}
+.cta-box::before{
+  content:'';position:absolute;width:400px;height:400px;border-radius:50%;
+  background:radial-gradient(circle,rgba(8,145,178,.55),transparent 70%);
+  top:-180px;right:-100px;
+}
+.cta-box::after{
+  content:'';position:absolute;width:300px;height:300px;border-radius:50%;
+  background:radial-gradient(circle,rgba(245,158,11,.35),transparent 70%);
+  bottom:-150px;left:-80px;
+}
+.cta-box > *{position:relative;z-index:1}
+.cta-box h2{font-size:2.15rem;font-weight:900;color:#fff;letter-spacing:-1px;margin-bottom:14px}
+.cta-box p{color:#A8B6CC;max-width:520px;margin:0 auto 30px;font-size:1rem}
+
+/* ============ FOOTER ============ */
+footer{background:var(--navy);color:#8FA2BD;padding:52px 24px 30px}
+.foot-inner{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px}
+.foot-brand .logo{color:#fff;margin-bottom:16px}
+.foot-brand p{font-size:.85rem;line-height:1.75;max-width:300px}
+.foot-col h5{color:#fff;font-size:.82rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;margin-bottom:18px}
+.foot-col ul{list-style:none;display:flex;flex-direction:column;gap:11px}
+.foot-col a{color:#8FA2BD;text-decoration:none;font-size:.85rem;transition:.2s}
+.foot-col a:hover{color:var(--cyan-light)}
+.foot-bottom{
+  max-width:1240px;margin:38px auto 0;padding-top:24px;border-top:1px solid rgba(255,255,255,.09);
+  text-align:center;font-size:.78rem;
+}
+
+/* ============ TOAST ============ */
+.toast{
+  position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(120px);
+  background:var(--navy);color:#fff;padding:14px 26px;border-radius:13px;
+  font-size:.88rem;font-weight:700;box-shadow:0 16px 40px rgba(11,27,51,.35);
+  z-index:999;transition:transform .35s cubic-bezier(.2,.8,.2,1);
+  display:flex;align-items:center;gap:10px;pointer-events:none;
+}
+.toast.show{transform:translateX(-50%) translateY(0)}
+
+/* ============ RESPONSIVE ============ */
+@media(max-width:1024px){
+  .hero-inner{grid-template-columns:1fr;gap:40px}
+  .hero h1{font-size:2.5rem}
+  .roadmap{grid-template-columns:repeat(2,1fr)}
+  .strategy-grid{grid-template-columns:repeat(2,1fr)}
+  .stats-grid-fb{grid-template-columns:repeat(2,1fr)}
+  .stat-cell:nth-child(2){border-right:none}
+  .stat-cell:nth-child(1),.stat-cell:nth-child(2){border-bottom:1px solid var(--border)}
+  .progress-card{grid-template-columns:1fr;gap:32px;text-align:center}
+  .foot-inner{grid-template-columns:1fr 1fr}
+}
+@media(max-width:768px){
+  .nav-links,.nav-cta{display:none}
+  .burger{display:block}
+  .hero{padding:52px 20px 64px}
+  .hero h1{font-size:2rem;letter-spacing:-1px}
+  .stats-grid{grid-template-columns:repeat(2,1fr)}
+  .stat:nth-child(2){border-right:none}
+  .stat:nth-child(1),.stat:nth-child(2){border-bottom:1px solid var(--border)}
+  .section{padding:60px 20px}
+  .section-head h2{font-size:1.65rem}
+  .roadmap{grid-template-columns:1fr}
+  .strategy-grid{grid-template-columns:1fr}
+  .lab-body{padding:20px 18px}
+  .audio-player{padding:18px;gap:12px}
+  .play-circle{width:48px;height:48px;font-size:1rem}
+  .audio-wave{display:none}
+  .fb-hero{padding:22px;gap:20px}
+  .band-circle{width:104px;height:104px}
+  .band-inner b{font-size:1.8rem}
+  .fb-section{padding:20px 18px}
+  .cta-box{padding:42px 22px}
+  .cta-box h2{font-size:1.55rem}
+  .foot-inner{grid-template-columns:1fr}
+  .progress-card{padding:26px}
+  .band-visual .big{font-size:3.4rem}
+  .tx-head{padding:18px}
+  .tx-body{padding:0 18px 20px}
+  .lab-tab{padding:10px 14px;font-size:.8rem}
+}
+</style>
+</head>
+<body>
+
+<!-- ================= NAV ================= -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="logo">
+      <div class="logo-mark">L</div>
+      <span>Listening Studio<small>IELTS 5.5 → 6.5+</small></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#roadmap">Lộ trình</a></li>
+      <li><a href="#lab">Phòng luyện nghe</a></li>
+      <li><a href="#transcripts">Transcripts</a></li>
+      <li><a href="#strategies">Chiến lược</a></li>
+    </ul>
+    <a href="#lab" class="nav-cta">Luyện nghe ngay</a>
+    <button class="burger" onclick="document.getElementById('lab').scrollIntoView()">☰</button>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="badge"><span class="dot"></span> AI Listening Coach · Góp ý sau mỗi bài</div>
+      <h1>Nghe chuẩn IELTS, <span class="accent">sửa lỗi bởi AI</span> từng câu</h1>
+      <p class="lead">
+        Luyện 4 phần thi Listening với audio tốc độ thật, đồng hồ tính giờ chuẩn
+        phòng thi và hệ thống AI phân tích lỗi sai, gợi ý ôn tập cá nhân hoá.
+      </p>
+      <div class="hero-actions">
+        <a href="#lab" class="btn btn-primary">🎧 Bắt đầu luyện nghe</a>
+        <a href="#transcripts" class="btn btn-ghost">📄 Xem transcripts</a>
+      </div>
+    </div>
+
+    <div class="hero-card">
+      <h4>Tiến độ của bạn</h4>
+      <div class="listen-preview">
+        <div class="listen-wave" id="heroWave">
+          <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+        </div>
+        <p>Band Listening: <span style="color:var(--cyan)">5.5</span> → mục tiêu <span style="color:var(--cyan)">6.5</span></p>
+      </div>
+      <div class="skill-bars">
+        <div class="skill-bar-item">
+          <div class="top"><span>Section 1 · Form Completion</span><span id="hero-pct-s1">0%</span></div>
+          <div class="track"><div class="fill" id="hero-bar-s1"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="top"><span>Section 2 · Multiple Choice</span><span id="hero-pct-s2">0%</span></div>
+          <div class="track"><div class="fill" id="hero-bar-s2"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="top"><span>Section 3 · Note Completion</span><span id="hero-pct-s3">0%</span></div>
+          <div class="track"><div class="fill" id="hero-bar-s3"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="top"><span>Section 4 · Sentence Completion</span><span id="hero-pct-s4">0%</span></div>
+          <div class="track"><div class="fill" id="hero-bar-s4"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ================= STATS ================= -->
+<div class="stats">
+  <div class="stats-grid">
+    <div class="stat"><b>4</b><span>Phần thi Listening</span></div>
+    <div class="stat"><b>26<em>+</em></b><span>Câu hỏi tương tác</span></div>
+    <div class="stat"><b>AI</b><span>Góp ý cá nhân hoá</span></div>
+    <div class="stat"><b>100<em>%</em></b><span>Chuẩn format IELTS</span></div>
+  </div>
+</div>
+
+<!-- ================= ROADMAP ================= -->
+<section class="section" id="roadmap">
+  <div class="section-head">
+    <span class="eyebrow">Lộ trình luyện nghe</span>
+    <h2>8 tuần nâng band Listening</h2>
+    <p>Lộ trình tập trung vào 4 yếu tố quyết định band Listening: từ vựng, tốc độ nghe, kỹ thuật dự đoán và xử lý bẫy.</p>
+  </div>
+
+  <div class="roadmap">
+    <div class="phase">
+      <div class="phase-num">01</div>
+      <h3>Nghe cơ bản</h3>
+      <span class="weeks">TUẦN 1 – 2</span>
+      <ul>
+        <li>Làm quen 4 phần thi Listening</li>
+        <li>Luyện nghe chính tả tên riêng, số, ngày tháng</li>
+        <li>Xây dựng 300 từ vựng chủ đề thường gặp</li>
+        <li>Nghe Section 1 ở tốc độ chậm → chuẩn</li>
+      </ul>
+    </div>
+    <div class="phase">
+      <div class="phase-num">02</div>
+      <h3>Kỹ thuật dự đoán</h3>
+      <span class="weeks">TUẦN 3 – 4</span>
+      <ul>
+        <li>Đọc trước câu hỏi, dự đoán loại từ cần điền</li>
+        <li>Luyện Multiple Choice: phân biệt đáp án nhiễu</li>
+        <li>Nghe Section 2 (độc thoại, map labelling)</li>
+        <li>Tập trung bắt keyword và paraphrase</li>
+      </ul>
+    </div>
+    <div class="phase">
+      <div class="phase-num">03</div>
+      <h3>Nghe học thuật</h3>
+      <span class="weeks">TUẦN 5 – 6</span>
+      <ul>
+        <li>Luyện Section 3 (thảo luận nhóm, nhiều giọng)</li>
+        <li>Section 4 (bài giảng, từ vựng học thuật)</li>
+        <li>Xử lý câu hỏi Note & Sentence Completion</li>
+        <li>Tăng tốc độ nghe lên 1.0× – 1.1×</li>
+      </ul>
+    </div>
+    <div class="phase">
+      <div class="phase-num">04</div>
+      <h3>Thi thử & tinh chỉnh</h3>
+      <span class="weeks">TUẦN 7 – 8</span>
+      <ul>
+        <li>Full mock test 40 câu dưới áp lực thời gian</li>
+        <li>Phân tích lỗi sai theo dạng câu hỏi</li>
+        <li>Tối ưu chiến lược làm bài theo band</li>
+        <li>Luyện tâm lý thi, không bỏ sót câu</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LISTENING LAB ================= -->
+<section class="section" id="lab" style="padding-top:0">
+  <div class="section-head">
+    <span class="eyebrow">Phòng luyện nghe tương tác</span>
+    <h2>4 phần thi Listening chuẩn IELTS</h2>
+    <p>Mỗi phần có audio, đồng hồ tính giờ và AI phân tích lỗi sai chi tiết sau khi nộp bài.</p>
+  </div>
+
+  <div class="lab-wrap">
+    <div class="lab-inner">
+      <div class="lab-tabs">
+        <button class="lab-tab active" data-section="s1" onclick="switchSection('s1')">
+          <span class="badge-num">1</span> Form Completion
+        </button>
+        <button class="lab-tab" data-section="s2" onclick="switchSection('s2')">
+          <span class="badge-num">2</span> Multiple Choice
+        </button>
+        <button class="lab-tab" data-section="s3" onclick="switchSection('s3')">
+          <span class="badge-num">3</span> Note Completion
+        </button>
+        <button class="lab-tab" data-section="s4" onclick="switchSection('s4')">
+          <span class="badge-num">4</span> Sentence Completion
+        </button>
+      </div>
+
+      <div class="lab-body">
+        <div class="lab-header">
+          <div>
+            <h3 id="labTitle">Section 1 — Gym Membership Enquiry</h3>
+            <p id="labSubtitle">Form Completion · 8 câu · 10 phút</p>
+          </div>
+          <div class="timer-box">
+            <div class="timer-top"><span>⏱ Thời gian còn lại</span></div>
+            <div class="timer-time" id="labTimer">10:00</div>
+            <div class="timer-track"><div class="timer-fill" id="labTimerBar" style="width:100%"></div></div>
+            <div class="timer-btns">
+              <button class="tbtn play" id="labTimerBtn" onclick="toggleTimer()">▶ Bắt đầu</button>
+              <button class="tbtn" onclick="resetTimer()">↺</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="audio-player">
+          <button class="play-circle" id="audioBtn" onclick="toggleAudio()" title="Phát / dừng audio">▶</button>
+          <div class="audio-info">
+            <b id="audioTitle">Section 1 — Gym Membership Enquiry</b>
+            <span id="audioStatus">Nhấn Play để nghe hội thoại (sử dụng giọng đọc tự động)</span>
+          </div>
+          <div class="audio-wave" id="audioWave">
+            <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+          </div>
+        </div>
+
+        <div class="q-list" id="questionList">
+          <!-- rendered by JS -->
+        </div>
+
+        <div class="actions">
+          <button class="btn-check" id="submitBtn" onclick="submitAnswers()">
+            🤖 Nộp bài & Nhận góp ý AI
+          </button>
+          <button class="btn-outline" onclick="resetSection()">↺ Làm lại</button>
+          <button class="btn-ghost-sm" onclick="toggleTranscript()">📄 Xem Transcript</button>
+        </div>
+
+        <div class="transcript" id="transcriptBox">
+          <!-- rendered by JS -->
+        </div>
+
+        <div class="loading-box" id="loadingBox">
+          <div class="spinner"></div>
+          <p>AI đang phân tích bài làm của bạn...</p>
+        </div>
+
+        <div class="feedback" id="feedbackBox"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TRANSCRIPTS ================= -->
+<section class="section" id="transcripts" style="padding-top:0">
+  <div class="section-head">
+    <span class="eyebrow">Học từ transcript</span>
+    <h2>Bài nghe mẫu & Đáp án chi tiết</h2>
+    <p>Đọc lại transcript của từng phần, đối chiếu đáp án và hiểu rõ vì sao đáp án đúng.</p>
+  </div>
+
+  <div class="tx-grid" id="txGrid">
+    <!-- rendered by JS -->
+  </div>
+</section>
+
+<!-- ================= STRATEGIES ================= -->
+<section class="section" id="strategies" style="padding-top:0">
+  <div class="section-head">
+    <span class="eyebrow">Chiến lược làm bài</span>
+    <h2>6 kỹ thuật nghe then chốt</h2>
+    <p>Những kỹ thuật này giúp bạn tăng 0.5–1.0 band Listening nếu áp dụng đúng cách.</p>
+  </div>
+
+  <div class="strategy-grid">
+    <div class="strategy">
+      <div class="s-icon">🔍</div>
+      <h4>Đọc trước câu hỏi</h4>
+      <p>Luôn đọc câu hỏi trước khi audio phát. Gạch chân keyword và dự đoán loại từ cần điền (số, tên, danh từ, động từ).</p>
+    </div>
+    <div class="strategy">
+      <div class="s-icon">🎯</div>
+      <h4>Bắt keyword & paraphrase</h4>
+      <p>Đề bài thường paraphrase lại thông tin trong audio. Ví dụ: "cost" → "price/fee", "begin" → "start/commence".</p>
+    </div>
+    <div class="strategy">
+      <div class="s-icon">⚠️</div>
+      <h4>Cẩn thận bẫy thông tin</h4>
+      <p>Audio thường đưa ra nhiều đáp án gây nhiễu. Chú ý các từ như "but", "actually", "however" — đáp án đúng thường ở sau.</p>
+    </div>
+    <div class="strategy">
+      <div class="s-icon">✍️</div>
+      <h4>Viết đáp án ngay</h4>
+      <p>Không dừng lại suy nghĩ quá lâu ở một câu. Viết đáp án tạm rồi tiếp tục nghe — bạn sẽ có thời gian kiểm tra cuối giờ.</p>
+    </div>
+    <div class="strategy">
+      <div class="s-icon">🔢</div>
+      <h4>Chú ý số liệu & chính tả</h4>
+      <p>Số, ngày tháng, tên riêng thường được đánh vần hoặc đọc theo cách đặc biệt. Luyện nghe kỹ các dạng này.</p>
+    </div>
+    <div class="strategy">
+      <div class="s-icon">✅</div>
+      <h4>Kiểm tra ngữ pháp đáp án</h4>
+      <p>Đáp án điền vào phải khớp ngữ pháp với câu. Nếu điền danh từ, kiểm tra số ít/số nhiều; nếu điền động từ, kiểm tra thì.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROGRESS ================= -->
+<section class="section" id="progress" style="padding-top:0">
+  <div class="section-head">
+    <span class="eyebrow">Theo dõi tiến độ</span>
+    <h2>Hành trình nghe của bạn</h2>
+    <p>Kết quả các bài luyện nghe được lưu tự động trên trình duyệt để bạn theo dõi sự tiến bộ.</p>
+  </div>
+
+  <div class="progress-card">
+    <div class="band-visual">
+      <div class="big" id="bandDisplay">5.5</div>
+      <div class="cap">Band Listening ước tính</div>
+      <div class="pill" id="bandPill">Mục tiêu: 6.5</div>
+    </div>
+    <div class="p-list">
+      <div class="p-item">
+        <div class="top"><span>Section 1 · Form Completion</span><em id="pct-s1">0% hoàn thành</em></div>
+        <div class="p-track"><div class="p-fill" id="bar-s1" style="background:linear-gradient(90deg,#0891B2,#22D3EE)"></div></div>
+      </div>
+      <div class="p-item">
+        <div class="top"><span>Section 2 · Multiple Choice</span><em id="pct-s2">0% hoàn thành</em></div>
+        <div class="p-track"><div class="p-fill" id="bar-s2" style="background:linear-gradient(90deg,#16A34A,#4ADE80)"></div></div>
+      </div>
+      <div class="p-item">
+        <div class="top"><span>Section 3 · Note Completion</span><em id="pct-s3">0% hoàn thành</em></div>
+        <div class="p-track"><div class="p-fill" id="bar-s3" style="background:linear-gradient(90deg,#F59E0B,#FBBF24)"></div></div>
+      </div>
+      <div class="p-item">
+        <div class="top"><span>Section 4 · Sentence Completion</span><em id="pct-s4">0% hoàn thành</em></div>
+        <div class="p-track"><div class="p-fill" id="bar-s4" style="background:linear-gradient(90deg,#7C3AED,#A78BFA)"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<div class="cta">
+  <div class="cta-box">
+    <h2>Nghe mỗi ngày — tiến bộ mỗi tuần</h2>
+    <p>Luyện 1 section Listening mỗi ngày trong 8 tuần. AI Coach sẽ giúp bạn nhận ra lỗi sai và cải thiện band điểm nhanh chóng.</p>
+    <a href="#lab" class="btn btn-primary">🎧 Luyện section đầu tiên ngay</a>
+  </div>
+</div>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="foot-inner">
+    <div class="foot-brand">
+      <div class="logo">
+        <div class="logo-mark">L</div>
+        <span style="color:#fff">Listening Studio<small style="color:#8FA2BD">IELTS 5.5 → 6.5+</small></span>
+      </div>
+      <p>Nền tảng luyện nghe IELTS với AI Coach phân tích lỗi sai, transcripts đầy đủ và lộ trình 8 tuần được thiết kế riêng cho học viên 5.5.</p>
+    </div>
+    <div class="foot-col">
+      <h5>Luyện nghe</h5>
+      <ul>
+        <li><a href="#lab" onclick="switchSection('s1')">Section 1 · Form</a></li>
+        <li><a href="#lab" onclick="switchSection('s2')">Section 2 · Choice</a></li>
+        <li><a href="#lab" onclick="switchSection('s3')">Section 3 · Note</a></li>
+        <li><a href="#lab" onclick="switchSection('s4')">Section 4 · Sentence</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h5>Tài nguyên</h5>
+      <ul>
+        <li><a href="#transcripts">Transcripts</a></li>
+        <li><a href="#strategies">Chiến lược</a></li>
+        <li><a href="#progress">Tiến độ</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h5>Hỗ trợ</h5>
+      <ul>
+        <li><a href="#">Hướng dẫn sử dụng</a></li>
+        <li><a href="#">Liên hệ</a></li>
+        <li><a href="#">Câu hỏi thường gặp</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom">© 2024 IELTS Listening Studio. Thiết kế chuẩn format IELTS quốc tế.</div>
+</footer>
+
+<div class="toast" id="toast">✓ Đã sao chép</div>
+
+<script>
+/* =====================================================
+   DATA — 4 SECTIONS
+===================================================== */
+const LAB_DATA = {
+  s1: {
+    title: 'Section 1 — Gym Membership Enquiry',
+    subtitle: 'Form Completion · 8 câu · 10 phút',
+    duration: 10 * 60,
+    script: [
+      { speaker: 'A', name: 'Receptionist', text: 'Good morning, City Fitness Centre. How can I help you?' },
+      { speaker: 'B', name: 'Customer', text: 'Hi, I\'d like to join the gym, please.' },
+      { speaker: 'A', name: 'Receptionist', text: 'Certainly. Can I take your name first?' },
+      { speaker: 'B', name: 'Customer', text: 'Yes, it\'s Marcus Webb. That\'s W-E-B-B.' },
+      { speaker: 'A', name: 'Receptionist', text: 'And your phone number?' },
+      { speaker: 'B', name: 'Customer', text: 'It\'s 07982 431 776.' },
+      { speaker: 'A', name: 'Receptionist', text: 'Do you have a preference for membership type? We offer standard, premium and student.' },
+      { speaker: 'B', name: 'Customer', text: 'I\'m a student, so student membership please.' },
+      { speaker: 'A', name: 'Receptionist', text: 'How long would you like to join for? Three months, six months, or a year?' },
+      { speaker: 'B', name: 'Customer', text: 'I\'ll start with six months.' },
+      { speaker: 'A', name: 'Receptionist', text: 'When would you like to start?' },
+      { speaker: 'B', name: 'Customer', text: 'From the first of March.' },
+      { speaker: 'A', name: 'Receptionist', text: 'Do you have any preferences for classes? We have yoga, spinning, and boxercise.' },
+      { speaker: 'B', name: 'Customer', text: 'Boxercise sounds good.' },
+      { speaker: 'A', name: 'Receptionist', text: 'Would you like a personal trainer as well? There\'s an additional fee.' },
+      { speaker: 'B', name: 'Customer', text: 'How much is it?' },
+      { speaker: 'A', name: 'Receptionist', text: 'Forty pounds a month. The trainer\'s name is Daniel Foster.' },
+      { speaker: 'B', name: 'Customer', text: 'OK, I\'ll take it.' },
+      { speaker: 'A', name: 'Receptionist', text: 'Your total comes to two hundred and eighty pounds. How would you like to pay?' },
+      { speaker: 'B', name: 'Customer', text: 'By card, please.' }
+    ],
+    questions: [
+      { type: 'fill', display: 'Customer surname: <b>_____</b>', answers: ['webb'], hint: 'Nghe kỹ chính tả tên riêng' },
+      { type: 'fill', display: 'Phone number: <b>_____</b>', answers: ['07982431776', '07982 431 776', '07982-431-776', '07982431 776'], hint: 'Số điện thoại được đọc theo nhóm' },
+      { type: 'fill', display: 'Membership type: <b>_____</b>', answers: ['student', 'student membership'], hint: 'Loại thành viên' },
+      { type: 'fill', display: 'Contract length: <b>_____</b>', answers: ['six months', '6 months', 'six month', 'half a year'], hint: 'Đơn vị: tháng' },
+      { type: 'fill', display: 'Start date: <b>_____</b>', answers: ['1st march', 'march 1st', 'march 1', 'first of march', '01/03', '1 march'], hint: 'Ngày bắt đầu' },
+      { type: 'fill', display: 'Class chosen: <b>_____</b>', answers: ['boxercise', 'boxercise class'], hint: 'Tên lớp học' },
+      { type: 'fill', display: 'Trainer\'s first name: <b>_____</b>', answers: ['daniel', 'dan'], hint: 'Tên riêng của HLV' },
+      { type: 'fill', display: 'Total cost: £<b>_____</b>', answers: ['280', '280 pounds', 'two hundred and eighty', 'two hundred eighty'], hint: 'Tổng chi phí' }
+    ]
+  },
+
+  s2: {
+    title: 'Section 2 — Campus Tour',
+    subtitle: 'Multiple Choice · 5 câu · 10 phút',
+    duration: 10 * 60,
+    script: [
+      { speaker: 'A', name: 'Guide', text: 'Welcome to Riverside University. Our tour begins here at the Main Hall.' },
+      { speaker: 'A', name: 'Guide', text: 'The library is just past the main entrance, to your left. It\'s open from eight in the morning to eleven at night during term time.' },
+      { speaker: 'A', name: 'Guide', text: 'Sports facilities are at the west end of campus.' },
+      { speaker: 'A', name: 'Guide', text: 'The gym has recently been renovated, and the swimming pool now has a new heating system.' },
+      { speaker: 'A', name: 'Guide', text: 'The student cafeteria is located next to the library.' },
+      { speaker: 'A', name: 'Guide', text: 'The café in the Main Hall is open on weekends, although the cafeteria closes on Sundays.' },
+      { speaker: 'A', name: 'Guide', text: 'If you have any questions, please ask.' }
+    ],
+    questions: [
+      {
+        type: 'choice',
+        prompt: 'Where is the library located?',
+        options: [
+          { key: 'A', text: 'To the right of the entrance' },
+          { key: 'B', text: 'To the left of the entrance' },
+          { key: 'C', text: 'Behind the Main Hall' }
+        ],
+        answer: 'B',
+        hint: 'Chú ý cụm "to your left"'
+      },
+      {
+        type: 'choice',
+        prompt: 'What time does the library close during term time?',
+        options: [
+          { key: 'A', text: '10 PM' },
+          { key: 'B', text: '11 PM' },
+          { key: 'C', text: '12 AM' }
+        ],
+        answer: 'B',
+        hint: 'Chú ý "eleven at night"'
+      },
+      {
+        type: 'choice',
+        prompt: 'What has recently been renovated?',
+        options: [
+          { key: 'A', text: 'The swimming pool' },
+          { key: 'B', text: 'The gym' },
+          { key: 'C', text: 'The library' }
+        ],
+        answer: 'B',
+        hint: 'Cẩn thận: swimming pool có "new heating system", không phải renovated'
+      },
+      {
+        type: 'choice',
+        prompt: 'Where is the student cafeteria?',
+        options: [
+          { key: 'A', text: 'Next to the library' },
+          { key: 'B', text: 'In the Main Hall' },
+          { key: 'C', text: 'At the west end of campus' }
+        ],
+        answer: 'A',
+        hint: 'Chú ý "next to the library"'
+      },
+      {
+        type: 'choice',
+        prompt: 'Which facility is open on weekends?',
+        options: [
+          { key: 'A', text: 'The student cafeteria' },
+          { key: 'B', text: 'The gym' },
+          { key: 'C', text: 'The café in the Main Hall' }
+        ],
+        answer: 'C',
+        hint: 'Cafeteria đóng cửa Chủ nhật — chỉ café Main Hall mở'
+      }
+    ]
+  },
+
+  s3: {
+    title: 'Section 3 — Study Abroad Consultation',
+    subtitle: 'Note Completion · 7 câu · 10 phút',
+    duration: 10 * 60,
+    script: [
+      { speaker: 'A', name: 'Tutor', text: 'So, Emma, you\'re interested in the study abroad programme?' },
+      { speaker: 'B', name: 'Student', text: 'Yes, I\'d like to go to Canada.' },
+      { speaker: 'A', name: 'Tutor', text: 'Why Canada specifically?' },
+      { speaker: 'B', name: 'Student', text: 'I\'m studying environmental science and their programmes in that area are very strong.' },
+      { speaker: 'A', name: 'Tutor', text: 'Good. Which university?' },
+      { speaker: 'B', name: 'Student', text: 'University of Toronto, if possible.' },
+      { speaker: 'A', name: 'Tutor', text: 'That\'s competitive. When would you like to go?' },
+      { speaker: 'B', name: 'Student', text: 'Next autumn term.' },
+      { speaker: 'A', name: 'Tutor', text: 'You\'ll need to submit your application by the end of January. Your personal statement is key.' },
+      { speaker: 'B', name: 'Student', text: 'How long should it be?' },
+      { speaker: 'A', name: 'Tutor', text: 'About 500 words. And you\'ll need two reference letters.' },
+      { speaker: 'B', name: 'Student', text: 'Who should write them?' },
+      { speaker: 'A', name: 'Tutor', text: 'One from me, and one from your course leader, Dr. Patterson.' },
+      { speaker: 'B', name: 'Student', text: 'What about accommodation?' },
+      { speaker: 'A', name: 'Tutor', text: 'The university offers on-campus housing, but apply early. Usually by the end of April. You\'ll also need to attend an orientation session in August.' }
+    ],
+    questions: [
+      { type: 'fill', display: 'Country: <b>_____</b>', answers: ['canada'], hint: 'Quốc gia điểm đến' },
+      { type: 'fill', display: 'University: <b>_____</b>', answers: ['university of toronto', 'toronto', 'toronto university'], hint: 'Tên trường đại học' },
+      { type: 'fill', display: 'Application deadline: end of <b>_____</b>', answers: ['january', 'jan'], hint: 'Tháng nộp đơn' },
+      { type: 'fill', display: 'Personal statement length: <b>_____</b> words', answers: ['500', 'five hundred'], hint: 'Số từ' },
+      { type: 'fill', display: 'Number of references: <b>_____</b>', answers: ['two', '2'], hint: 'Số lượng thư giới thiệu' },
+      { type: 'fill', display: 'Second referee: Dr. <b>_____</b>', answers: ['patterson', 'paterson'], hint: 'Họ của người giới thiệu thứ hai' },
+      { type: 'fill', display: 'Orientation month: <b>_____</b>', answers: ['august', 'aug'], hint: 'Tháng tham gia orientation' }
+    ]
+  },
+
+  s4: {
+    title: 'Section 4 — The Science of Sleep',
+    subtitle: 'Sentence Completion · 6 câu · 10 phút',
+    duration: 10 * 60,
+    script: [
+      { speaker: 'A', name: 'Lecturer', text: 'Good afternoon, everyone. Today\'s lecture is about the science of sleep.' },
+      { speaker: 'A', name: 'Lecturer', text: 'There are several stages of sleep, but the most important for learning and memory is REM sleep.' },
+      { speaker: 'A', name: 'Lecturer', text: 'Adults typically need between seven and nine hours per night. However, recent studies show that almost one third of adults get less than six hours.' },
+      { speaker: 'A', name: 'Lecturer', text: 'The most common sleep disorder is insomnia. It affects up to 30 percent of the population. Common causes include stress, an irregular schedule, and excessive caffeine.' },
+      { speaker: 'A', name: 'Lecturer', text: 'Technology has significantly changed sleep patterns. The blue light from screens suppresses melatonin production. Experts recommend avoiding screens for at least an hour before bed.' },
+      { speaker: 'A', name: 'Lecturer', text: 'Exercise also plays a key role. People who exercise regularly report better sleep quality. However, exercising too close to bedtime can interfere with sleep onset.' },
+      { speaker: 'A', name: 'Lecturer', text: 'Finally, creating a regular routine helps. Going to bed and waking at the same time — even on weekends — is crucial for optimal sleep.' }
+    ],
+    questions: [
+      { type: 'fill', display: 'Most important sleep stage for memory: <b>_____</b>', answers: ['rem', 'rem sleep'], hint: 'Viết tắt 3 chữ cái + "sleep"' },
+      { type: 'fill', display: 'Adults need between <b>_____</b> hours per night', answers: ['seven and nine', '7-9', '7 to 9', '7 and 9', 'seven to nine', '7–9'], hint: 'Khoảng thời gian' },
+      { type: 'fill', display: 'Most common sleep disorder: <b>_____</b>', answers: ['insomnia'], hint: 'Tên chứng bệnh' },
+      { type: 'fill', display: 'A common cause: <b>_____</b>', answers: ['stress', 'irregular schedule', 'caffeine', 'excessive caffeine'], hint: 'Có thể là stress, lịch sinh hoạt thất thường, hoặc caffeine' },
+      { type: 'fill', display: 'Blue light suppresses: <b>_____</b>', answers: ['melatonin', 'melatonin production'], hint: 'Hormone bị ức chế' },
+      { type: 'fill', display: 'Exercising too close to bedtime can <b>_____</b> sleep', answers: ['interfere with', 'interfere', 'interfere with sleep', 'interfere with sleep onset'], hint: 'Động từ + giới từ' }
+    ]
+  }
+};
+
+/* =====================================================
+   STATE
+===================================================== */
+let currentSection = 's1';
+let timerState = { remaining: 0, total: 0, running: false, interval: null };
+let audioPlaying = false;
+let currentVoices = [];
+let transcriptVisible = false;
+
+/* =====================================================
+   SPEECH SYNTHESIS SETUP
+===================================================== */
+function loadVoices() {
+  currentVoices = window.speechSynthesis ? window.speechSynthesis.getVoices() : [];
+}
+
+if (window.speechSynthesis) {
+  loadVoices();
+  if (typeof speechSynthesis.onvoiceschanged !== 'undefined') {
+    speechSynthesis.onvoiceschanged = loadVoices;
+  }
+}
+
+function pickEnglishVoice() {
+  if (!currentVoices.length) currentVoices = speechSynthesis.getVoices();
+  const en = currentVoices.filter(v => v.lang && v.lang.toLowerCase().startsWith('en'));
+  if (!en.length) return null;
+  // prefer en-GB then en-US
+  const gb = en.find(v => v.lang.toLowerCase() === 'en-gb');
+  if (gb) return gb;
+  const us = en.find(v => v.lang.toLowerCase() === 'en-us');
+  if (us) return us;
+  return en[0];
+}
+
+/* =====================================================
+   SECTION SWITCH
+===================================================== */
+function switchSection(id) {
+  currentSection = id;
+  const data = LAB_DATA[id];
+
+  // tabs
+  document.querySelectorAll('.lab-tab').forEach(t => {
+    t.classList.toggle('active', t.dataset.section === id);
+  });
+
+  // header
+  document.getElementById('labTitle').textContent = data.title;
+  document.getElementById('labSubtitle').textContent = data.subtitle;
+  document.getElementById('audioTitle').textContent = data.title;
+
+  // reset UI
+  stopAudio();
+  document.getElementById('audioBtn').textContent = '▶';
+  document.getElementById('audioBtn').classList.remove('playing');
+  document.getElementById('audioWave').classList.remove('playing');
+  document.getElementById('audioStatus').textContent = 'Nhấn Play để nghe hội thoại (sử dụng giọng đọc tự động)';
+
+  // render questions
+  renderQuestions(data);
+
+  // transcript
+  transcriptVisible = false;
+  document.getElementById('transcriptBox').classList.remove('show');
+  renderTranscript(data);
+
+  // feedback reset
+  document.getElementById('feedbackBox').classList.remove('show');
+  document.getElementById('feedbackBox').innerHTML = '';
+  document.getElementById('loadingBox').classList.remove('show');
+
+  // timer
+  timerState.total = data.duration;
+  timerState.remaining = data.duration;
+  stopTimer();
+  renderTimer();
+
+  // scroll to lab top
+  setTimeout(() => {
+    document.getElementById('lab').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 50);
+}
+
+/* =====================================================
+   RENDER QUESTIONS
+===================================================== */
+function renderQuestions(data) {
+  const container = document.getElementById('questionList');
+  container.innerHTML = data.questions.map((q, i) => {
+    if (q.type === 'fill') {
+      return `
+        <div class="q" data-index="${i}">
+          <div class="q-text">
+            <span class="num">${i + 1}</span>
+            <div>${q.display}</div>
+          </div>
+          <input class="fill-input" type="text" data-idx="${i}" placeholder="Nhập đáp án..." autocomplete="off">
+        </div>
+      `;
+    } else if (q.type === 'choice') {
+      return `
+        <div class="q" data-index="${i}">
+          <div class="q-text">
+            <span class="num">${i + 1}</span>
+            <div>${q.prompt}</div>
+          </div>
+          <div class="choices">
+            ${q.options.map(o => `
+              <input type="radio" name="q_${currentSection}_${i}" id="q_${currentSection}_${i}_${o.key}" value="${o.key}">
+              <label for="q_${currentSection}_${i}_${o.key}">
+                <span class="key">${o.key}</span>
+                <span>${o.text}</span>
+              </label>
+            `).join('')}
+          </div>
+        </div>
+      `;
+    }
+    return '';
+  }).join('');
+}
+
+/* =====================================================
+   RENDER TRANSCRIPT
+===================================================== */
+function renderTranscript(data) {
+  const box = document.getElementById('transcriptBox');
+  const paragraphs = data.script.map(line => {
+    if (line.speaker && line.name) {
+      return `<p><span class="speaker">${escapeHtml(line.name)}:</span>${escapeHtml(line.text)}</p>`;
+    }
+    return `<p>${escapeHtml(line.text)}</p>`;
+  }).join('');
+  box.innerHTML = `<h5>📄 Transcript — ${escapeHtml(data.title)}</h5>${paragraphs}`;
+}
+
+function toggleTranscript() {
+  transcriptVisible = !transcriptVisible;
+  document.getElementById('transcriptBox').classList.toggle('show', transcriptVisible);
+}
+
+/* =====================================================
+   TIMER
+===================================================== */
+function renderTimer() {
+  const m = Math.floor(timerState.remaining / 60);
+  const s = timerState.remaining % 60;
+  const el = document.getElementById('labTimer');
+  const bar = document.getElementById('labTimerBar');
+  const btn = document.getElementById('labTimerBtn');
+
+  el.textContent = String(m).padStart(2, '0') + ':' + String(s).padStart(2, '0');
+  const pct = timerState.total > 0 ? (timerState.remaining / timerState.total) * 100 : 0;
+  bar.style.width = pct + '%';
+
+  const warn = timerState.remaining <= 60;
+  el.classList.toggle('warn', warn);
+  bar.classList.toggle('warn', warn);
+
+  btn.textContent = timerState.running ? '⏸ Tạm dừng' : '▶ Bắt đầu';
+  btn.classList.toggle('running', timerState.running);
+}
+
+function toggleTimer() {
+  if (timerState.running) {
+    stopTimer();
+    return;
+  }
+  if (timerState.remaining <= 0) return;
+  timerState.running = true;
+  timerState.interval = setInterval(() => {
+    timerState.remaining--;
+    if (timerState.remaining <= 0) {
+      timerState.remaining = 0;
+      stopTimer();
+    }
+    renderTimer();
+  }, 1000);
+  renderTimer();
+}
+
+function stopTimer() {
+  clearInterval(timerState.interval);
+  timerState.interval = null;
+  timerState.running = false;
+  renderTimer();
+}
+
+function resetTimer() {
+  stopTimer();
+  timerState.remaining = timerState.total;
+  renderTimer();
+}
+
+/* =====================================================
+   AUDIO PLAYBACK (Speech Synthesis)
+===================================================== */
+function toggleAudio() {
+  if (!window.speechSynthesis) {
+    document.getElementById('audioStatus').textContent = '⚠️ Trình duyệt không hỗ trợ audio. Hãy dùng Chrome hoặc Edge.';
+    return;
+  }
+
+  if (audioPlaying) {
+    stopAudio();
+    return;
+  }
+
+  const data = LAB_DATA[currentSection];
+  const btn = document.getElementById('audioBtn');
+  const wave = document.getElementById('audioWave');
+  const status = document.getElementById('audioStatus');
+
+  // Kiểm tra voices
+  if (!currentVoices.length) currentVoices = speechSynthesis.getVoices();
+  if (!currentVoices.length) {
+    status.textContent = '⚠️ Chưa tải được giọng đọc. Hãy thử lại sau vài giây.';
+    return;
+  }
+
+  audioPlaying = true;
+  btn.textContent = '⏸';
+  btn.classList.add('playing');
+  wave.classList.add('playing');
+  status.textContent = '🔊 Đang phát... Hãy lắng nghe và trả lời câu hỏi.';
+
+  playScript(data.script, () => {
+    audioPlaying = false;
+    btn.textContent = '▶';
+    btn.classList.remove('playing');
+    wave.classList.remove('playing');
+    status.textContent = '✅ Đã phát xong. Bạn có thể nghe lại hoặc nộp bài.';
+  });
+}
+
+function playScript(script, onEnd) {
+  speechSynthesis.cancel();
+  const voice = pickEnglishVoice();
+  let i = 0;
+
+  function next() {
+    if (i >= script.length) {
+      if (onEnd) onEnd();
+      return;
+    }
+    const line = script[i];
+    const u = new SpeechSynthesisUtterance(line.text);
+    u.lang = 'en-GB';
+    u.rate = 0.92;
+    if (voice) u.voice = voice;
+
+    // Different pitch for different speakers in dialogue
+    if (line.speaker === 'A') {
+      u.pitch = 0.95;
+    } else if (line.speaker === 'B') {
+      u.pitch = 1.18;
+    } else {
+      u.pitch = 1.0;
+    }
+
+    u.onend = () => { i++; next(); };
+    u.onerror = () => { i++; next(); };
+
+    speechSynthesis.speak(u);
+  }
+
+  next();
+}
+
+function stopAudio() {
+  if (window.speechSynthesis) speechSynthesis.cancel();
+  audioPlaying = false;
+  const btn = document.getElementById('audioBtn');
+  if (btn) {
+    btn.textContent = '▶';
+    btn.classList.remove('playing');
+  }
+  const wave = document.getElementById('audioWave');
+  if (wave) wave.classList.remove('playing');
+  const status = document.getElementById('audioStatus');
+  if (status) status.textContent = 'Đã dừng. Nhấn Play để nghe lại.';
+}
+
+/* =====================================================
+   ANSWER CHECKING + AI FEEDBACK
+===================================================== */
+function normalize(str) {
+  return String(str || '')
+    .toLowerCase()
+    .trim()
+    .replace(/[£$€.,]/g, '')
+    .replace(/\s+/g, ' ')
+    .replace(/-/g, ' ')
+    .trim();
+}
+
+function getAnswerValue(q, idx, sectionId) {
+  if (q.type === 'fill') {
+    const inp = document.querySelector(`#questionList input.fill-input[data-idx="${idx}"]`);
+    return inp ? inp.value.trim() : '';
+  } else if (q.type === 'choice') {
+    const sel = document.querySelector(`input[name="q_${sectionId}_${idx}"]:checked`);
+    return sel ? sel.value : '';
+  }
+  return '';
+}
+
+function checkAnswer(q, userVal) {
+  if (q.type === 'fill') {
+    const norm = normalize(userVal);
+    if (!norm) return false;
+    return q.answers.some(a => normalize(a) === norm);
+  }
+  if (q.type === 'choice') {
+    return userVal === q.answer;
+  }
+  return false;
+}
+
+function submitAnswers() {
+  const data = LAB_DATA[currentSection];
+  const questions = data.questions;
+
+  // stop audio & timer
+  stopAudio();
+  stopTimer();
+
+  // collect results
+  const results = [];
+  let correctCount = 0;
+
+  questions.forEach((q, i) => {
+    const userVal = getAnswerValue(q, i, currentSection);
+    const isCorrect = checkAnswer(q, userVal);
+    if (isCorrect) correctCount++;
+    results.push({ q, userVal, isCorrect, idx: i });
+  });
+
+  // highlight questions
+  document.querySelectorAll('#questionList .q').forEach((el, i) => {
+    el.classList.remove('correct', 'wrong');
+    const r = results[i];
+    if (r) {
+      el.classList.add(r.isCorrect ? 'correct' : 'wrong');
+    }
+  });
+
+  // show loading
+  const loading = document.getElementById('loadingBox');
+  const feedback = document.getElementById('feedbackBox');
+  feedback.classList.remove('show');
+  feedback.innerHTML = '';
+  loading.classList.add('show');
+
+  setTimeout(() => {
+    const analysis = analyzeResults(results, data, timerState);
+    feedback.innerHTML = renderFeedback(analysis, data);
+    feedback.classList.add('show');
+    loading.classList.remove('show');
+
+    // animate band circle
+    setTimeout(() => {
+      const bc = feedback.querySelector('.band-circle');
+      if (bc) {
+        bc.style.setProperty('--p', analysis.pct);
+        bc.style.setProperty('--c', bandColor(analysis.band));
+      }
+      feedback.querySelectorAll('.p-fill-anim').forEach(el => {
+        el.style.width = el.dataset.w;
+      });
+    }, 80);
+
+    // save progress
+    saveProgress(currentSection, analysis.pct);
+
+    // scroll
+    feedback.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 1100);
+}
+
+function analyzeResults(results, data, timer) {
+  const total = results.length;
+  const correct = results.filter(r => r.isCorrect).length;
+  const pct = Math.round((correct / total) * 100);
+  const band = pctToBand(pct);
+
+  const wrong = results.filter(r => !r.isCorrect);
+  const timeUsed = timer.total - timer.remaining;
+  const timeUsedPct = Math.round((timeUsed / timer.total) * 100);
+
+  // Error categorization
+  const errorTypes = {
+    number: [],
+    name: [],
+    spelling: [],
+    distractor: [],
+    missed: []
+  };
+
+  wrong.forEach(r => {
+    const val = normalize(r.userVal);
+    const q = r.q;
+    if (q.type === 'choice') {
+      errorTypes.distractor.push(r);
+      return;
+    }
+    const answerNorm = normalize(q.answers[0] || '');
+    // Number check
+    if (/\d/.test(answerNorm) && /\d/.test(val) && val !== answerNorm) {
+      errorTypes.number.push(r);
+      return;
+    }
+    if (/\d/.test(answerNorm) && !val) {
+      errorTypes.missed.push(r);
+      return;
+    }
+    // Name check
+    if (/^[a-z ]+$/.test(answerNorm) && answerNorm.length > 3 && val && levenshtein(val, answerNorm) <= 2) {
+      errorTypes.spelling.push(r);
+      return;
+    }
+    if (!val) {
+      errorTypes.missed.push(r);
+      return;
+    }
+    errorTypes.spelling.push(r);
+  });
+
+  return { total, correct, pct, band, results, wrong, errorTypes, timeUsed, timeUsedPct };
+}
+
+function levenshtein(a, b) {
+  if (a === b) return 0;
+  if (!a.length) return b.length;
+  if (!b.length) return a.length;
+  const m = [];
+  for (let i = 0; i <= b.length; i++) m[i] = [i];
+  for (let j = 0; j <= a.length; j++) m[0][j] = j;
+  for (let i = 1; i <= b.length; i++) {
+    for (let j = 1; j <= a.length; j++) {
+      if (b.charAt(i - 1) === a.charAt(j - 1)) {
+        m[i][j] = m[i - 1][j - 1];
+      } else {
+        m[i][j] = Math.min(m[i - 1][j - 1] + 1, m[i][j - 1] + 1, m[i - 1][j] + 1);
+      }
+    }
+  }
+  return m[b.length][a.length];
+}
+
+function pctToBand(pct) {
+  const score40 = Math.round((pct / 100) * 40);
+  if (score40 >= 39) return 9.0;
+  if (score40 >= 37) return 8.5;
+  if (score40 >= 35) return 8.0;
+  if (score40 >= 32) return 7.5;
+  if (score40 >= 30) return 7.0;
+  if (score40 >= 26) return 6.5;
+  if (score40 >= 23) return 6.0;
+  if (score40 >= 18) return 5.5;
+  if (score40 >= 16) return 5.0;
+  if (score40 >= 13) return 4.5;
+  if (score40 >= 10) return 4.0;
+  return 3.5;
+}
+
+function bandColor(b) {
+  if (b >= 7) return '#16A34A';
+  if (b >= 6) return '#0891B2';
+  if (b >= 5.5) return '#F59E0B';
+  return '#DC2626';
+}
+
+function bandLabel(b) {
+  if (b >= 7.5) return 'Xuất sắc — sẵn sàng cho band 7.5+';
+  if (b >= 7) return 'Rất tốt — mục tiêu 7.0 trong tầm tay';
+  if (b >= 6.5) return 'Tốt — đã đạt mục tiêu 6.5!';
+  if (b >= 6) return 'Khá — gần đạt mục tiêu 6.5';
+  if (b >= 5.5) return 'Trung bình — cần luyện thêm';
+  return 'Cần luyện tập nhiều hơn';
+}
+
+/* =====================================================
+   RENDER FEEDBACK
+===================================================== */
+function renderFeedback(a, data) {
+  const s = a.band;
+
+  // Strengths
+  const strengths = [];
+  if (a.pct >= 80) strengths.push(`<strong>Kết quả rất cao:</strong> ${a.correct}/${a.total} câu đúng (${a.pct}%) — kỹ năng nghe của bạn đang ở mức tốt.`);
+  if (a.pct >= 60 && a.pct < 80) strengths.push(`<strong>Kết quả khá tốt:</strong> ${a.correct}/${a.total} câu đúng (${a.pct}%) — nền tảng nghe đã vững.`);
+  if (a.timeUsedPct <= 70 && a.timeUsedPct > 0) strengths.push(`<strong>Quản lý thời gian tốt:</strong> hoàn thành trong ${Math.round(a.timeUsed / 60)} phút — còn thời gian kiểm tra.`);
+  if (a.errorTypes.distractor.length === 0 && a.wrong.length > 0) strengths.push(`<strong>Không bị mắc bẫy đáp án nhiễu</strong> — đây là điểm rất quan trọng trong IELTS Listening.`);
+  if (a.wrong.length === 0) strengths.push(`<strong>Hoàn hảo!</strong> Bạn trả lời đúng tất cả các câu.`);
+  if (strengths.length === 0) strengths.push('Hãy tiếp tục luyện tập — mỗi bài nghe là một bước tiến!');
+
+  // Issues
+  const issues = [];
+  if (a.wrong.length > 0) {
+    issues.push(`<strong>${a.wrong.length} câu chưa chính xác.</strong> Xem chi tiết bên dưới để hiểu lý do.`);
+  }
+  if (a.errorTypes.number.length > 0) {
+    const nums = a.errorTypes.number.map(r => `<code>câu ${r.idx + 1}</code>`).join(', ');
+    issues.push(`<strong>Lỗi số liệu ở ${nums}:</strong> Bạn nghe nhầm số. Hãy luyện nghe các số có đuôi giống nhau (e.g. thirteen/thirty, fifteen/fifty).`);
+  }
+  if (a.errorTypes.spelling.length > 0) {
+    const sp = a.errorTypes.spelling.map(r => `<code>câu ${r.idx + 1}</code>`).join(', ');
+    issues.push(`<strong>Lỗi chính tả / từ vựng ở ${sp}:</strong> Bạn viết gần đúng nhưng sai chính tả hoặc sai từ. Hãy viết đáp án đúng như trong transcript.`);
+  }
+  if (a.errorTypes.distractor.length > 0) {
+    const d = a.errorTypes.distractor.map(r => `<code>câu ${r.idx + 1}</code>`).join(', ');
+    issues.push(`<strong>Mắc bẫy đáp án nhiễu ở ${d}:</strong> Audio thường đưa ra 2-3 lựa chọn — đáp án đúng thường ở sau "but", "actually", "however".`);
+  }
+  if (a.errorTypes.missed.length > 0) {
+    const m = a.errorTypes.missed.map(r => `<code>câu ${r.idx + 1}</code>`).join(', ');
+    issues.push(`<strong>Bỏ trống ${m}:</strong> Bạn không nghe kịp hoặc bỏ qua. Hãy đọc trước câu hỏi và dự đoán đáp án.`);
+  }
+  if (a.timeUsedPct >= 95) {
+    issues.push(`<strong>Dùng gần hết thời gian:</strong> Hãy luyện tăng tốc độ nghe và phân bổ thời gian hợp lý hơn.`);
+  }
+  if (issues.length === 0) issues.push('Không phát hiện vấn đề lớn nào. Tiếp tục phát huy!');
+
+  // Recommendations
+  const tips = [];
+  if (a.pct < 60) {
+    tips.push('Nghe lại audio 2-3 lần và đọc transcript song song để nhận diện từ khó.');
+    tips.push('Học thuộc <strong>cách đọc số, ngày tháng, tên riêng</strong> — đây là dạng câu hỏi phổ biến ở Section 1.');
+  }
+  if (a.errorTypes.distractor.length > 0) {
+    tips.push('Khi nghe Multiple Choice, hãy <strong>gạch chân keyword trong câu hỏi</strong> và cảnh giác với các đáp án xuất hiện đầu tiên — chúng thường là bẫy.');
+  }
+  if (a.errorTypes.spelling.length > 0) {
+    tips.push('Luyện <strong>chính tả</strong> các từ học thuật thường gặp: environment, government, development, accommodation...');
+  }
+  if (a.errorTypes.number.length > 0) {
+    tips.push('Luyện nghe số: phân biệt <strong>-teen và -ty</strong>, số có gạch nối (double, triple), và số có 3-4 chữ số.');
+  }
+  if (a.timeUsedPct >= 90) {
+    tips.push('Tập nghe với tốc độ <strong>1.0× – 1.1×</strong> để quen với tốc độ thi thật. Tránh dừng lại quá lâu ở một câu.');
+  }
+  tips.push('Đọc transcript và <a href="#transcripts">bài mẫu</a> để học cách paraphrase và mở rộng từ vựng.');
+  tips.push('Luyện thêm section tương tự để củng cố kỹ năng vừa học.');
+
+  // Per-question review
+  const qReview = a.results.map(r => {
+    const q = r.q;
+    const icon = r.isCorrect ? '✓' : '✗';
+    let ansDisplay = '';
+    if (q.type === 'fill') {
+      ansDisplay = `<strong>${escapeHtml(r.userVal || '(bỏ trống)')}</strong>`;
+      if (!r.isCorrect) ansDisplay += ` → đáp án đúng: <em style="color:var(--green)">${escapeHtml(q.answers[0])}</em>`;
+    } else {
+      ansDisplay = `<strong>${escapeHtml(r.userVal || '(chưa chọn)')}</strong>`;
+      if (!r.isCorrect) ansDisplay += ` → đáp án đúng: <em style="color:var(--green)">${q.answer}</em>`;
+    }
+    return `
+      <div class="q-row ${r.isCorrect ? 'correct' : 'wrong'}">
+        <div class="q-idx">${r.isCorrect ? '✓' : '✗'}</div>
+        <div class="q-content">
+          <b>Câu ${r.idx + 1}:</b> ${ansDisplay}
+          ${q.hint ? `<br><em>💡 ${escapeHtml(q.hint)}</em>` : ''}
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  const pct = a.pct;
+  return `
+    <div class="fb-card">
+      <div class="fb-hero">
+        <div class="band-circle" style="--p:${pct};--c:${bandColor(a.band)}">
+          <div class="band-inner">
+            <b>${a.band.toFixed(1)}</b>
+            <small>Band ước tính</small>
+          </div>
+        </div>
+        <div class="fb-hero-text">
+          <h3>${bandLabel(a.band)}</h3>
+          <p>AI Coach phân tích bài làm dựa trên số câu đúng, loại lỗi sai và thời gian hoàn thành. Đây là ước lượng, không phải điểm thi chính thức.</p>
+        </div>
+      </div>
+
+      <div class="stats-grid-fb">
+        <div class="stat-cell"><b style="color:var(--green)">${a.correct}/${a.total}</b><span>Câu đúng</span></div>
+        <div class="stat-cell"><b>${pct}%</b><span>Tỷ lệ đúng</span></div>
+        <div class="stat-cell"><b>${Math.round(a.timeUsed / 60)}m ${a.timeUsed % 60}s</b><span>Thời gian</span></div>
+        <div class="stat-cell"><b style="color:${bandColor(a.band)}">${a.band.toFixed(1)}</b><span>Band ước tính</span></div>
+      </div>
+
+      <div class="fb-section">
+        <h4><span class="ico ico-good">✓</span> Điểm mạnh</h4>
+        <div class="fb-list">
+          ${strengths.map(x => `<div class="fb-item"><span class="bullet b-good">✓</span><div>${x}</div></div>`).join('')}
+        </div>
+      </div>
+
+      <div class="fb-section">
+        <h4><span class="ico ico-warn">!</span> Vấn đề cần cải thiện</h4>
+        <div class="fb-list">
+          ${issues.map(x => `<div class="fb-item"><span class="bullet b-warn">!</span><div>${x}</div></div>`).join('')}
+        </div>
+      </div>
+
+      <div class="fb-section">
+        <h4><span class="ico ico-info">📋</span> Chi tiết từng câu</h4>
+        <div class="q-review">${qReview}</div>
+      </div>
+
+      <div class="fb-section">
+        <h4><span class="ico ico-tip">💡</span> Gợi ý cải thiện</h4>
+        <div class="fb-list">
+          ${tips.map(x => `<div class="fb-item"><span class="bullet b-tip">→</span><div>${x}</div></div>`).join('')}
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+/* =====================================================
+   RESET SECTION
+===================================================== */
+function resetSection() {
+  const data = LAB_DATA[currentSection];
+  document.querySelectorAll('#questionList .q').forEach(q => q.classList.remove('correct', 'wrong'));
+  document.querySelectorAll('#questionList .fill-input').forEach(i => i.value = '');
+  document.querySelectorAll('#questionList input[type="radio"]').forEach(r => r.checked = false);
+  document.getElementById('feedbackBox').classList.remove('show');
+  document.getElementById('feedbackBox').innerHTML = '';
+  document.getElementById('loadingBox').classList.remove('show');
+  stopAudio();
+  resetTimer();
+  document.getElementById('audioBtn').textContent = '▶';
+  document.getElementById('audioBtn').classList.remove('playing');
+  document.getElementById('audioWave').classList.remove('playing');
+  document.getElementById('audioStatus').textContent = 'Nhấn Play để nghe hội thoại (sử dụng giọng đọc tự động)';
+  // scroll to top of lab
+  document.getElementById('lab').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+/* =====================================================
+   PROGRESS TRACKING
+===================================================== */
+function saveProgress(section, pct) {
+  try {
+    const data = JSON.parse(localStorage.getItem('ieltsListeningProgress') || '{}');
+    const prev = data[section] || 0;
+    data[section] = Math.max(prev, pct);
+    localStorage.setItem('ieltsListeningProgress', JSON.stringify(data));
+    loadProgress();
+  } catch (e) { /* ignore */ }
+}
+
+function loadProgress() {
+  let data = {};
+  try { data = JSON.parse(localStorage.getItem('ieltsListeningProgress') || '{}'); } catch (e) {}
+
+  const sections = ['s1', 's2', 's3', 's4'];
+  let total = 0, count = 0;
+
+  sections.forEach(s => {
+    const pct = Math.min(100, data[s] || 0);
+
+    // Progress dashboard
+    const bar = document.getElementById('bar-' + s);
+    const label = document.getElementById('pct-' + s);
+    if (bar) {
+      bar.style.width = '0%';
+      setTimeout(() => { bar.style.width = pct + '%'; }, 120);
+    }
+    if (label) label.textContent = pct + '% hoàn thành';
+
+    // Hero bars
+    const hBar = document.getElementById('hero-bar-' + s);
+    const hPct = document.getElementById('hero-pct-' + s);
+    if (hBar) {
+      hBar.style.width = '0%';
+      setTimeout(() => { hBar.style.width = pct + '%'; }, 150);
+    }
+    if (hPct) hPct.textContent = pct + '%';
+
+    total += pct;
+    count++;
+  });
+
+  const avg = total / count;
+  const band = (5.5 + (avg / 100) * 1.2).toFixed(1);
+  const bandEl = document.getElementById('bandDisplay');
+  const pill = document.getElementById('bandPill');
+
+  if (bandEl) bandEl.textContent = band;
+  if (pill) {
+    if (parseFloat(band) >= 6.5) {
+      pill.textContent = '🎉 Đã đạt mục tiêu 6.5!';
+      pill.style.background = 'var(--green-soft)';
+      pill.style.color = '#0F7A38';
+    } else {
+      pill.textContent = 'Mục tiêu: 6.5 · Còn ' + (6.5 - parseFloat(band)).toFixed(1) + ' band';
+    }
+  }
+}
+
+/* =====================================================
+   TRANSCRIPT CARDS
+===================================================== */
+function renderTranscriptCards() {
+  const grid = document.getElementById('txGrid');
+  const ids = ['s1', 's2', 's3', 's4'];
+  grid.innerHTML = ids.map(id => {
+    const d = LAB_DATA[id];
+    const script = d.script.map(line => {
+      if (line.speaker && line.name) {
+        return `<p><span class="speaker">${escapeHtml(line.name)}:</span>${escapeHtml(line.text)}</p>`;
+      }
+      return `<p>${escapeHtml(line.text)}</p>`;
+    }).join('');
+
+    const answers = d.questions.map((q, i) => {
+      const ans = q.type === 'fill' ? q.answers[0] : q.answer;
+      const label = q.type === 'fill' ? q.display.replace(/<b>_____<\/b>/g, `<b style="color:var(--cyan-deep)">${escapeHtml(ans)}</b>`) : `Câu ${i+1}: <b>${ans}</b>`;
+      return `<li><b>${i+1}.</b> ${label.replace(/<[^>]*>/g, '')} → <b>${escapeHtml(ans)}</b></li>`;
+    }).join('');
+
+    return `
+      <div class="tx-card" id="tx-${id}">
+        <div class="tx-head" onclick="toggleTx('tx-${id}')">
+          <span class="tx-badge">Section ${id.slice(1)}</span>
+          <h4>${escapeHtml(d.title)}</h4>
+          <div class="tx-meta">
+            <span>${d.questions.length} câu</span>
+          </div>
+          <div class="tx-toggle">▾</div>
+        </div>
+        <div class="tx-body">
+          <div class="tx-text">${script}</div>
+          <div class="tx-answers">
+            <h5>✓ Đáp án</h5>
+            <ul>${answers}</ul>
+          </div>
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+function toggleTx(id) {
+  const el = document.getElementById(id);
+  if (el) el.classList.toggle('open');
+}
+
+/* =====================================================
+   TOAST
+===================================================== */
+let toastTimer = null;
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove('show'), 2200);
+}
+
+/* =====================================================
+   UTILS
+===================================================== */
+function escapeHtml(s) {
+  return String(s)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+/* =====================================================
+   INIT
+===================================================== */
+window.addEventListener('load', () => {
+  // hero wave animation
+  setTimeout(() => {
+    const wave = document.getElementById('heroWave');
+    if (wave) wave.classList.add('playing');
+  }, 400);
+
+  // init first section
+  switchSection('s1');
+
+  // transcript cards
+  renderTranscriptCards();
+
+  // progress
+  loadProgress();
+
+  // smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', function (e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  // Preload voices
+  if (window.speechSynthesis) {
+    setTimeout(() => {
+      currentVoices = speechSynthesis.getVoices();
+    }, 300);
+  }
+});
+</script>
+</body>
+</html>
